@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<context id="testTables" targetRuntime="MyBatis3">
+		<commentGenerator>
+			<!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+		<!--数据库连接的信息：驱动类、连接地址、用户名、密码  ______________________________________ -->
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql:///test" userId="root"
+			password="">
+		</jdbcConnection>
+		<!-- <jdbcConnection driverClass="oracle.jdbc.OracleDriver"
+			connectionURL="jdbc:oracle:thin:@127.0.0.1:1521:yycg" 
+			userId="yycg"
+			password="yycg">
+		</jdbcConnection> -->
+
+		<!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer，为 true时把JDBC DECIMAL 和 
+			NUMERIC 类型解析为java.math.BigDecimal -->
+			
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<!-- targetProject:生成PO类的位置  ______________________________________-->
+		<javaModelGenerator targetPackage="com.utry.ut.pojo"
+			targetProject="./src/main/java">
+			<!-- targetProject=".\src"> -->
+			<!-- enableSubPackages:是否让schema作为包的后缀 -->
+			<property name="enableSubPackages" value="false" />
+			<!-- 从数据库返回的值被清理前后的空格 -->
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+        <!-- targetProject:mapper映射文件生成的位置  ______________________________________ -->
+		<sqlMapGenerator targetPackage="com.utry.ut.mapper"
+			targetProject="./src/main/java"> 
+			<!-- targetProject=".\src"> -->
+			<!-- enableSubPackages:是否让schema作为包的后缀 -->
+			<property name="enableSubPackages" value="false" />
+		</sqlMapGenerator>
+		<!-- targetPackage：mapper接口生成的位置  ______________________________________ -->
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.utry.ut.mapper"
+			targetProject="./src/main/java"> 
+			<!-- targetProject="./src"> -->
+			<!-- enableSubPackages:是否让schema作为包的后缀 -->
+			<property name="enableSubPackages" value="false" />
+		</javaClientGenerator>
+		<!-- 
+		table 属性
+			alias="hx_user"  数据库表 字段添加别名 id  变成   hx_user_id
+			mapperName	mapper接口和配置文件的生成文件名
+			domainObjectName="HxUser"
+		table 子标签	
+			useActualColumnNames : <property name="useActualColumnNames" value="true"/>
+				true
+					 数据库,bean原样映射
+					 数据库  self_DesC -> pojo  self_DesC
+					
+				false(默认值)
+					数据中：client_id , clientName -> pojo : clientId(下划线没了), clientname(统一小写)。
+					MyBatis Generator会将数据库中实际的字段名字转换为Camel Case风格作为生成的实体类的属性名。 
+		 -->
+		<!--  修改 修改 修改 修改  修改 修改 修改 修改 修改 修改 修改  修改 修改 修改 修改 修改 修改 修改  修改 修改 修改 -->
+		<table schema="" tableName="TestUser" mapperName="TestUserMapper" domainObjectName="TestUser">
+			<!--useActualColumnNames :true 数据库,bean原样映射  -->
+			 <property name="useActualColumnNames" value="false"/>
+			<!-- <ignoreColumn column="FRED" /> -->
+		</table>
+		<!-- 有些表的字段需要指定java类型
+		 <table schema="" tableName="">
+			<columnOverride column="" javaType="" />
+		</table> -->
+	</context>
+</generatorConfiguration>
+
