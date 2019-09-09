@@ -12,7 +12,6 @@
 </head>
 <body>
       这是一个空项目
-      
       <a href="${ctx }/user/LoginUI">登录</a>
 </body>
 </html>

@@ -1,6 +1,5 @@
 package com.utry.ut.web.controller;
 
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -27,8 +26,4 @@ public class MainController {
 	public String index(HttpServletRequest request, HttpServletResponse response, Model model) {
 		return "index";
 	}
-	
-	
-	
 }
-
