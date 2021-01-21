@@ -24,7 +24,7 @@
 		<servlet-api.version>2.5</servlet-api.version>
 		<jsp-api.version>2.0</jsp-api.version>
 		
-		<jackson.version>2.7.0</jackson.version>
+		<jackson.version>2.9.10.7</jackson.version>
 		
 		<commons-lang3.version>3.3.2</commons-lang3.version>
 		<commons-fileupload.version>1.3.3</commons-fileupload.version>
